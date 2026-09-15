@@ -1,0 +1,161 @@
+/* Variables de color para mantener consistencia */
+:root {
+    --primary-blue: #2563eb;
+    --primary-dark: #1e40af;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --bg-input: #f9fafb;
+    --border-color: #e5e7eb;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login-card {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    overflow: hidden;
+}
+
+/* Panel Izquierdo */
+.login-brand {
+    width: 50%;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+    padding: 3rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-brand i {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+.login-brand h2 {
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+}
+
+.login-brand p {
+    color: #bfdbfe;
+    line-height: 1.5;
+}
+
+/* Panel Derecho (Formulario) */
+.login-form-container {
+    width: 50%;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+.login-form-container h3 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    background-color: white;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.form-actions label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.form-actions a {
+    font-size: 0.875rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.form-actions a:hover {
+    text-decoration: underline;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.875rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .login-brand {
+        display: none;
+    }
+    .login-form-container {
+        width: 100%;
+        padding: 2rem;
+    }
+}
