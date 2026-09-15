@@ -21,3 +21,35 @@ Sistema web desarrollado con Django y PostgreSQL para optimizar las operaciones 
 * **Prohibido** hacer commits directos a `main`.
 * Toda nueva tarea debe trabajarse en una rama (ej. `feat/login`, `fix/errores-bd`).
 * Se requiere un Pull Request revisado para integrar código a la rama principal.
+
+## 📊 Diagrama Entidad-Relación (Base de Datos)
+
+```mermaid
+erDiagram
+    USUARIO ||--o{ CITA : "es paciente"
+    USUARIO ||--o{ CITA : "es médico"
+    CONSULTORIO ||--o{ CITA : "tiene"
+
+    USUARIO {
+        int id PK
+        string username
+        string password
+        string tipo_usuario
+        string telefono
+        string direccion
+        string sexo
+    }
+    CONSULTORIO {
+        int id PK
+        string nombre_consultorio
+    }
+    CITA {
+        int id PK
+        date fecha
+        time hora
+        string motivo
+        string estado
+        int paciente_id FK
+        int medico_id FK
+        int consultorio_id FK
+    }
