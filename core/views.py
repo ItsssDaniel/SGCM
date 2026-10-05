@@ -11,6 +11,14 @@ def login_view(request):
 # ==========================================
 # VISTAS DE LA UNIDAD 2 (PACIENTES)
 # ==========================================
+from .models import Usuario
+
+# --- VISTA DE LA UNIDAD 1 (LOGIN) ---
+def login_view(request):
+    # Aquí va la lógica de tu login de la U1
+    return render(request, 'core/login.html')
+
+# --- VISTAS DE LA UNIDAD 2 (PACIENTES) ---
 def lista_pacientes(request):
     query = request.GET.get('q', '')
     if query:
@@ -84,3 +92,4 @@ def agendar_cita(request):
         'medicos': medicos,
         'consultorios': consultorios
     })
+    return redirect('lista_pacientes')
